@@ -1,2 +1,2 @@
-# ProjetosJava
- Projetos em Java feitos em 2023
+# EstudosJava
+ Meus estudos em Java feitos em 2023
