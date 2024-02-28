@@ -1,0 +1,45 @@
+package exemplos;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+public class App {
+
+	private JFrame frmSfjahjafdhjfhajh;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					App window = new App();
+					window.frmSfjahjafdhjfhajh.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public App() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmSfjahjafdhjfhajh = new JFrame();
+		frmSfjahjafdhjfhajh.setResizable(false);
+		frmSfjahjafdhjfhajh.setTitle("Appzord");
+		frmSfjahjafdhjfhajh.setBounds(100, 100, 450, 300);
+		frmSfjahjafdhjfhajh.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

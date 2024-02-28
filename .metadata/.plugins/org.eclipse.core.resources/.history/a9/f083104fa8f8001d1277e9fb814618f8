@@ -1,0 +1,7 @@
+package jogo.misc;
+
+public class Quadra {
+	private int largura;
+	private int comprimento;
+
+}

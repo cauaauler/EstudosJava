@@ -1,0 +1,34 @@
+package jogo;
+
+import jogo.pessoas.Jogador;
+import jogo.pessoas.Juiz;
+import jogo.pessoas.Treinador;
+
+public class Exemplo02 {
+	
+	public static void main(String[] args) {
+		
+		Treinador t1 = new Treinador();
+		t1.setNome("Renato");
+		
+		Jogador j11 = new Jogador();
+		j11.setNome("Parede");
+		Jogador j12 = new Jogador();
+		j12.setNome("Porta");
+		Jogador j13 = new Jogador();
+		j13.setNome("Romaldo");
+		Jogador j14 = new Jogador();
+		j14.setNome("Nilson");
+		Jogador j15 = new Jogador();
+		j15.setNome("kkk");
+		
+		Equipe mandante = new Equipe();
+		mandante.setNome("Napoli");
+		mandante.setGoleiro(j11);
+		mandante.setAlaDireito(j12);
+		mandante.setAlaEsquerdo(j13);
+		mandante.setFixo(j14);
+		mandante.setPivo(j15);
+	}
+
+}

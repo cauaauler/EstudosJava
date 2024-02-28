@@ -1,0 +1,39 @@
+package exercicios;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+public class Exer01 {
+	public static void main(String[] args) {
+		
+		ArrayList<String[]> soma = new ArrayList<String[]>();
+		File f1 = new File("exer01/exer01.txt");
+		
+		try {
+			FileReader fr = new FileReader(f1);
+			BufferedReader br = new BufferedReader(fr);
+			
+			
+			String linha = null;
+			while((linha = br.readLine()) != null ) {
+				
+				for (int i = 0; i < linha.length(); i++) {
+					soma.add(linha.split(" "));
+					
+				}
+				
+			}
+			
+			
+			br.close();
+			fr.close();
+			
+		} catch (Exception e) {
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package classes;
+
+public class Saldo {
+	Disciplina disciplina;
+	Aluno aluno;
+	static double saldo;
+	
+	public Saldo(Disciplina disciplina, Aluno aluno) {
+		super();
+		this.disciplina = disciplina;
+		this.aluno = aluno;
+	}
+	
+	
+
+}

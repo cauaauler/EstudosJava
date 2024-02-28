@@ -1,0 +1,953 @@
+package jogo;
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+
+import javax.swing.JButton;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
+import java.awt.GridLayout;
+
+public class Combate {
+	
+	boolean gameStart = false;
+	
+	
+	AgenteSecreto agente = new AgenteSecreto(1,"Agente",1);
+	Soldado soldado = new Soldado(2,"Soldado",8);
+	Cabo cabo = new Cabo(3,"Cabo",5);
+	Sargento sargento = new Sargento(4,"Sargento",4);
+	Subtenente subtenente = new Subtenente(5,"Subtenente",4);
+	Tenente tenente = new Tenente(6,"Tenente",4);
+	Capitao capitao = new Capitao(7,"Capitão",3);
+	Major major = new Major(8,"Major",2);
+	Coronel coronel = new Coronel(9,"Coronel",1);
+	General general = new General(10,"General",1);
+	//prisioneiro
+	//minas 6
+	
+	ArrayList<Exercito> exercito = new ArrayList<>();
+
+	private JFrame frame;
+	
+	JButton[][] botoes = new JButton[10][10];
+	
+	int x = 0; //auxiliar
+
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args)  {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Combate window = new Combate();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Combate() {
+		initialize();
+		
+		exercito.add(agente);
+		for (int i = 0; i < soldado.quantidade; i++) {
+			exercito.add(soldado);
+		}
+		for (int i = 0; i < cabo.quantidade; i++) {
+			exercito.add(cabo);
+		}
+		for (int i = 0; i < sargento.quantidade; i++) {
+			exercito.add(sargento);
+		}
+		for (int i = 0; i < subtenente.quantidade; i++) {
+			exercito.add(subtenente);
+		}
+		for (int i = 0; i < tenente.quantidade; i++) {
+			exercito.add(tenente);
+		}
+		for (int i = 0; i < capitao.quantidade; i++) {
+			exercito.add(capitao);
+		}
+		for (int i = 0; i < major.quantidade; i++) {
+			exercito.add(major);
+		}
+		exercito.add(coronel);
+		exercito.add(general);
+		
+ 
+		
+	}
+	
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		
+		
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(100, 100, 714, 451);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new GridLayout(10, 10, 0, 0));
+		
+		
+		
+		for (int  i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				JButton botao = new JButton("");
+				botao.setName(String.valueOf(x + 1));
+				botoes[i][j] = botao; 
+				//System.out.println(botoes[i][j].getName());
+				frame.getContentPane().add(botao);
+				x++;
+				
+				
+			}
+			
+		}
+		x = 0;
+		for (int i = 0; i < botoes.length; i++) {
+			for (int j = 0; j < botoes.length; j++) {
+				JButton botao = botoes[i][j];
+				
+				botao.addActionListener(new ActionListener() {
+					
+					public void actionPerformed(ActionEvent e) {
+						
+						botao.setText(exercito.get(x).forca + "");
+						
+					}
+					
+				});
+			}
+			
+		}
+			
+			
+		
+		
+		
+		/*
+		btnNewButton_1 = new JButton("");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnNewButton_1.setText(exercito.get(i).forca + "");;
+				i++;
+			}
+		});
+		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+		gbc_btnNewButton_1.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_1.gridx = 0;
+		gbc_btnNewButton_1.gridy = 0;
+		frame.getContentPane().add(btnNewButton_1, gbc_btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
+		gbc_btnNewButton_2.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_2.gridx = 1;
+		gbc_btnNewButton_2.gridy = 0;
+		frame.getContentPane().add(btnNewButton_2, gbc_btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
+		gbc_btnNewButton_3.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_3.gridx = 2;
+		gbc_btnNewButton_3.gridy = 0;
+		frame.getContentPane().add(btnNewButton_3, gbc_btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
+		gbc_btnNewButton_4.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_4.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_4.gridx = 3;
+		gbc_btnNewButton_4.gridy = 0;
+		frame.getContentPane().add(btnNewButton_4, gbc_btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
+		gbc_btnNewButton_5.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_5.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_5.gridx = 4;
+		gbc_btnNewButton_5.gridy = 0;
+		frame.getContentPane().add(btnNewButton_5, gbc_btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
+		gbc_btnNewButton_6.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_6.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_6.gridx = 5;
+		gbc_btnNewButton_6.gridy = 0;
+		frame.getContentPane().add(btnNewButton_6, gbc_btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_7 = new GridBagConstraints();
+		gbc_btnNewButton_7.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_7.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_7.gridx = 6;
+		gbc_btnNewButton_7.gridy = 0;
+		frame.getContentPane().add(btnNewButton_7, gbc_btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_8 = new GridBagConstraints();
+		gbc_btnNewButton_8.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_8.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_8.gridx = 7;
+		gbc_btnNewButton_8.gridy = 0;
+		frame.getContentPane().add(btnNewButton_8, gbc_btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_9 = new GridBagConstraints();
+		gbc_btnNewButton_9.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_9.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_9.gridx = 8;
+		gbc_btnNewButton_9.gridy = 0;
+		frame.getContentPane().add(btnNewButton_9, gbc_btnNewButton_9);
+		
+		JButton btnNewButton_10 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_10 = new GridBagConstraints();
+		gbc_btnNewButton_10.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_10.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_10.gridx = 9;
+		gbc_btnNewButton_10.gridy = 0;
+		frame.getContentPane().add(btnNewButton_10, gbc_btnNewButton_10);
+		
+		JButton btnNewButton_11 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_11 = new GridBagConstraints();
+		gbc_btnNewButton_11.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_11.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_11.gridx = 0;
+		gbc_btnNewButton_11.gridy = 1;
+		frame.getContentPane().add(btnNewButton_11, gbc_btnNewButton_11);
+		
+		JButton btnNewButton_12 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_12 = new GridBagConstraints();
+		gbc_btnNewButton_12.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_12.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_12.gridx = 1;
+		gbc_btnNewButton_12.gridy = 1;
+		frame.getContentPane().add(btnNewButton_12, gbc_btnNewButton_12);
+		
+		JButton btnNewButton_13 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_13 = new GridBagConstraints();
+		gbc_btnNewButton_13.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_13.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_13.gridx = 2;
+		gbc_btnNewButton_13.gridy = 1;
+		frame.getContentPane().add(btnNewButton_13, gbc_btnNewButton_13);
+		
+		JButton btnNewButton_14 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_14 = new GridBagConstraints();
+		gbc_btnNewButton_14.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_14.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_14.gridx = 3;
+		gbc_btnNewButton_14.gridy = 1;
+		frame.getContentPane().add(btnNewButton_14, gbc_btnNewButton_14);
+		
+		JButton btnNewButton_15 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_15 = new GridBagConstraints();
+		gbc_btnNewButton_15.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_15.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_15.gridx = 4;
+		gbc_btnNewButton_15.gridy = 1;
+		frame.getContentPane().add(btnNewButton_15, gbc_btnNewButton_15);
+		
+		JButton btnNewButton_16 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_16 = new GridBagConstraints();
+		gbc_btnNewButton_16.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_16.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_16.gridx = 5;
+		gbc_btnNewButton_16.gridy = 1;
+		frame.getContentPane().add(btnNewButton_16, gbc_btnNewButton_16);
+		
+		JButton btnNewButton_17 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_17 = new GridBagConstraints();
+		gbc_btnNewButton_17.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_17.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_17.gridx = 6;
+		gbc_btnNewButton_17.gridy = 1;
+		frame.getContentPane().add(btnNewButton_17, gbc_btnNewButton_17);
+		
+		JButton btnNewButton_18 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_18 = new GridBagConstraints();
+		gbc_btnNewButton_18.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_18.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_18.gridx = 7;
+		gbc_btnNewButton_18.gridy = 1;
+		frame.getContentPane().add(btnNewButton_18, gbc_btnNewButton_18);
+		
+		JButton btnNewButton_19 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_19 = new GridBagConstraints();
+		gbc_btnNewButton_19.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_19.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_19.gridx = 8;
+		gbc_btnNewButton_19.gridy = 1;
+		frame.getContentPane().add(btnNewButton_19, gbc_btnNewButton_19);
+		
+		JButton btnNewButton_20 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_20 = new GridBagConstraints();
+		gbc_btnNewButton_20.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_20.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_20.gridx = 9;
+		gbc_btnNewButton_20.gridy = 1;
+		frame.getContentPane().add(btnNewButton_20, gbc_btnNewButton_20);
+		
+		JButton btnNewButton_21 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_21 = new GridBagConstraints();
+		gbc_btnNewButton_21.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_21.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_21.gridx = 0;
+		gbc_btnNewButton_21.gridy = 2;
+		frame.getContentPane().add(btnNewButton_21, gbc_btnNewButton_21);
+		
+		JButton btnNewButton_22 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_22 = new GridBagConstraints();
+		gbc_btnNewButton_22.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_22.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_22.gridx = 1;
+		gbc_btnNewButton_22.gridy = 2;
+		frame.getContentPane().add(btnNewButton_22, gbc_btnNewButton_22);
+		
+		JButton btnNewButton_23 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_23 = new GridBagConstraints();
+		gbc_btnNewButton_23.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_23.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_23.gridx = 2;
+		gbc_btnNewButton_23.gridy = 2;
+		frame.getContentPane().add(btnNewButton_23, gbc_btnNewButton_23);
+		
+		JButton btnNewButton_24 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_24 = new GridBagConstraints();
+		gbc_btnNewButton_24.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_24.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_24.gridx = 3;
+		gbc_btnNewButton_24.gridy = 2;
+		frame.getContentPane().add(btnNewButton_24, gbc_btnNewButton_24);
+		
+		JButton btnNewButton_25 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_25 = new GridBagConstraints();
+		gbc_btnNewButton_25.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_25.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_25.gridx = 4;
+		gbc_btnNewButton_25.gridy = 2;
+		frame.getContentPane().add(btnNewButton_25, gbc_btnNewButton_25);
+		
+		JButton btnNewButton_26 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_26 = new GridBagConstraints();
+		gbc_btnNewButton_26.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_26.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_26.gridx = 5;
+		gbc_btnNewButton_26.gridy = 2;
+		frame.getContentPane().add(btnNewButton_26, gbc_btnNewButton_26);
+		
+		JButton btnNewButton_27 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_27 = new GridBagConstraints();
+		gbc_btnNewButton_27.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_27.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_27.gridx = 6;
+		gbc_btnNewButton_27.gridy = 2;
+		frame.getContentPane().add(btnNewButton_27, gbc_btnNewButton_27);
+		
+		JButton btnNewButton_28 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_28 = new GridBagConstraints();
+		gbc_btnNewButton_28.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_28.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_28.gridx = 7;
+		gbc_btnNewButton_28.gridy = 2;
+		frame.getContentPane().add(btnNewButton_28, gbc_btnNewButton_28);
+		
+		JButton btnNewButton_29 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_29 = new GridBagConstraints();
+		gbc_btnNewButton_29.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_29.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_29.gridx = 8;
+		gbc_btnNewButton_29.gridy = 2;
+		frame.getContentPane().add(btnNewButton_29, gbc_btnNewButton_29);
+		
+		JButton btnNewButton_30 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_30 = new GridBagConstraints();
+		gbc_btnNewButton_30.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_30.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_30.gridx = 9;
+		gbc_btnNewButton_30.gridy = 2;
+		frame.getContentPane().add(btnNewButton_30, gbc_btnNewButton_30);
+		
+		JButton btnNewButton_31 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_31 = new GridBagConstraints();
+		gbc_btnNewButton_31.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_31.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_31.gridx = 0;
+		gbc_btnNewButton_31.gridy = 3;
+		frame.getContentPane().add(btnNewButton_31, gbc_btnNewButton_31);
+		
+		JButton btnNewButton_32 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_32 = new GridBagConstraints();
+		gbc_btnNewButton_32.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_32.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_32.gridx = 1;
+		gbc_btnNewButton_32.gridy = 3;
+		frame.getContentPane().add(btnNewButton_32, gbc_btnNewButton_32);
+		
+		JButton btnNewButton_33 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_33 = new GridBagConstraints();
+		gbc_btnNewButton_33.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_33.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_33.gridx = 2;
+		gbc_btnNewButton_33.gridy = 3;
+		frame.getContentPane().add(btnNewButton_33, gbc_btnNewButton_33);
+		
+		JButton btnNewButton_34 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_34 = new GridBagConstraints();
+		gbc_btnNewButton_34.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_34.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_34.gridx = 3;
+		gbc_btnNewButton_34.gridy = 3;
+		frame.getContentPane().add(btnNewButton_34, gbc_btnNewButton_34);
+		
+		JButton btnNewButton_35 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_35 = new GridBagConstraints();
+		gbc_btnNewButton_35.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_35.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_35.gridx = 4;
+		gbc_btnNewButton_35.gridy = 3;
+		frame.getContentPane().add(btnNewButton_35, gbc_btnNewButton_35);
+		
+		JButton btnNewButton_36 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_36 = new GridBagConstraints();
+		gbc_btnNewButton_36.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_36.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_36.gridx = 5;
+		gbc_btnNewButton_36.gridy = 3;
+		frame.getContentPane().add(btnNewButton_36, gbc_btnNewButton_36);
+		
+		JButton btnNewButton_37 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_37 = new GridBagConstraints();
+		gbc_btnNewButton_37.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_37.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_37.gridx = 6;
+		gbc_btnNewButton_37.gridy = 3;
+		frame.getContentPane().add(btnNewButton_37, gbc_btnNewButton_37);
+		
+		JButton btnNewButton_38 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_38 = new GridBagConstraints();
+		gbc_btnNewButton_38.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_38.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_38.gridx = 7;
+		gbc_btnNewButton_38.gridy = 3;
+		frame.getContentPane().add(btnNewButton_38, gbc_btnNewButton_38);
+		
+		JButton btnNewButton_39 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_39 = new GridBagConstraints();
+		gbc_btnNewButton_39.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_39.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_39.gridx = 8;
+		gbc_btnNewButton_39.gridy = 3;
+		frame.getContentPane().add(btnNewButton_39, gbc_btnNewButton_39);
+		
+		JButton btnNewButton_40 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_40 = new GridBagConstraints();
+		gbc_btnNewButton_40.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_40.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_40.gridx = 9;
+		gbc_btnNewButton_40.gridy = 3;
+		frame.getContentPane().add(btnNewButton_40, gbc_btnNewButton_40);
+		
+		JButton btnNewButton_41 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_41 = new GridBagConstraints();
+		gbc_btnNewButton_41.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_41.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_41.gridx = 0;
+		gbc_btnNewButton_41.gridy = 4;
+		frame.getContentPane().add(btnNewButton_41, gbc_btnNewButton_41);
+		
+		JButton btnNewButton_42 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_42 = new GridBagConstraints();
+		gbc_btnNewButton_42.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_42.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_42.gridx = 1;
+		gbc_btnNewButton_42.gridy = 4;
+		frame.getContentPane().add(btnNewButton_42, gbc_btnNewButton_42);
+		
+		JButton btnNewButton_43 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_43 = new GridBagConstraints();
+		gbc_btnNewButton_43.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_43.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_43.gridx = 2;
+		gbc_btnNewButton_43.gridy = 4;
+		frame.getContentPane().add(btnNewButton_43, gbc_btnNewButton_43);
+		
+		JButton btnNewButton_44 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_44 = new GridBagConstraints();
+		gbc_btnNewButton_44.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_44.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_44.gridx = 3;
+		gbc_btnNewButton_44.gridy = 4;
+		frame.getContentPane().add(btnNewButton_44, gbc_btnNewButton_44);
+		
+		JButton btnNewButton_45 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_45 = new GridBagConstraints();
+		gbc_btnNewButton_45.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_45.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_45.gridx = 4;
+		gbc_btnNewButton_45.gridy = 4;
+		frame.getContentPane().add(btnNewButton_45, gbc_btnNewButton_45);
+		
+		JButton btnNewButton_46 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_46 = new GridBagConstraints();
+		gbc_btnNewButton_46.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_46.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_46.gridx = 5;
+		gbc_btnNewButton_46.gridy = 4;
+		frame.getContentPane().add(btnNewButton_46, gbc_btnNewButton_46);
+		
+		JButton btnNewButton_47 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_47 = new GridBagConstraints();
+		gbc_btnNewButton_47.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_47.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_47.gridx = 6;
+		gbc_btnNewButton_47.gridy = 4;
+		frame.getContentPane().add(btnNewButton_47, gbc_btnNewButton_47);
+		
+		JButton btnNewButton_48 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_48 = new GridBagConstraints();
+		gbc_btnNewButton_48.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_48.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_48.gridx = 7;
+		gbc_btnNewButton_48.gridy = 4;
+		frame.getContentPane().add(btnNewButton_48, gbc_btnNewButton_48);
+		
+		JButton btnNewButton_49 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_49 = new GridBagConstraints();
+		gbc_btnNewButton_49.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_49.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_49.gridx = 8;
+		gbc_btnNewButton_49.gridy = 4;
+		frame.getContentPane().add(btnNewButton_49, gbc_btnNewButton_49);
+		
+		JButton btnNewButton_50 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_50 = new GridBagConstraints();
+		gbc_btnNewButton_50.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_50.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_50.gridx = 9;
+		gbc_btnNewButton_50.gridy = 4;
+		frame.getContentPane().add(btnNewButton_50, gbc_btnNewButton_50);
+		
+		JButton btnNewButton_51 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_51 = new GridBagConstraints();
+		gbc_btnNewButton_51.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_51.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_51.gridx = 0;
+		gbc_btnNewButton_51.gridy = 5;
+		frame.getContentPane().add(btnNewButton_51, gbc_btnNewButton_51);
+		
+		JButton btnNewButton_52 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_52 = new GridBagConstraints();
+		gbc_btnNewButton_52.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_52.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_52.gridx = 1;
+		gbc_btnNewButton_52.gridy = 5;
+		frame.getContentPane().add(btnNewButton_52, gbc_btnNewButton_52);
+		
+		JButton btnNewButton_53 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_53 = new GridBagConstraints();
+		gbc_btnNewButton_53.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_53.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_53.gridx = 2;
+		gbc_btnNewButton_53.gridy = 5;
+		frame.getContentPane().add(btnNewButton_53, gbc_btnNewButton_53);
+		
+		JButton btnNewButton_54 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_54 = new GridBagConstraints();
+		gbc_btnNewButton_54.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_54.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_54.gridx = 3;
+		gbc_btnNewButton_54.gridy = 5;
+		frame.getContentPane().add(btnNewButton_54, gbc_btnNewButton_54);
+		
+		JButton btnNewButton_55 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_55 = new GridBagConstraints();
+		gbc_btnNewButton_55.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_55.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_55.gridx = 4;
+		gbc_btnNewButton_55.gridy = 5;
+		frame.getContentPane().add(btnNewButton_55, gbc_btnNewButton_55);
+		
+		JButton btnNewButton_56 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_56 = new GridBagConstraints();
+		gbc_btnNewButton_56.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_56.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_56.gridx = 5;
+		gbc_btnNewButton_56.gridy = 5;
+		frame.getContentPane().add(btnNewButton_56, gbc_btnNewButton_56);
+		
+		JButton btnNewButton_57 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_57 = new GridBagConstraints();
+		gbc_btnNewButton_57.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_57.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_57.gridx = 6;
+		gbc_btnNewButton_57.gridy = 5;
+		frame.getContentPane().add(btnNewButton_57, gbc_btnNewButton_57);
+		
+		JButton btnNewButton_58 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_58 = new GridBagConstraints();
+		gbc_btnNewButton_58.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_58.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_58.gridx = 7;
+		gbc_btnNewButton_58.gridy = 5;
+		frame.getContentPane().add(btnNewButton_58, gbc_btnNewButton_58);
+		
+		JButton btnNewButton_59 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_59 = new GridBagConstraints();
+		gbc_btnNewButton_59.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_59.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_59.gridx = 8;
+		gbc_btnNewButton_59.gridy = 5;
+		frame.getContentPane().add(btnNewButton_59, gbc_btnNewButton_59);
+		
+		JButton btnNewButton_60 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_60 = new GridBagConstraints();
+		gbc_btnNewButton_60.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_60.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_60.gridx = 9;
+		gbc_btnNewButton_60.gridy = 5;
+		frame.getContentPane().add(btnNewButton_60, gbc_btnNewButton_60);
+		
+		JButton btnNewButton_61 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_61 = new GridBagConstraints();
+		gbc_btnNewButton_61.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_61.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_61.gridx = 0;
+		gbc_btnNewButton_61.gridy = 6;
+		frame.getContentPane().add(btnNewButton_61, gbc_btnNewButton_61);
+		
+		JButton btnNewButton_62 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_62 = new GridBagConstraints();
+		gbc_btnNewButton_62.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_62.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_62.gridx = 1;
+		gbc_btnNewButton_62.gridy = 6;
+		frame.getContentPane().add(btnNewButton_62, gbc_btnNewButton_62);
+		
+		JButton btnNewButton_63 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_63 = new GridBagConstraints();
+		gbc_btnNewButton_63.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_63.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_63.gridx = 2;
+		gbc_btnNewButton_63.gridy = 6;
+		frame.getContentPane().add(btnNewButton_63, gbc_btnNewButton_63);
+		
+		JButton btnNewButton_64 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_64 = new GridBagConstraints();
+		gbc_btnNewButton_64.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_64.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_64.gridx = 3;
+		gbc_btnNewButton_64.gridy = 6;
+		frame.getContentPane().add(btnNewButton_64, gbc_btnNewButton_64);
+		
+		JButton btnNewButton_65 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_65 = new GridBagConstraints();
+		gbc_btnNewButton_65.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_65.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_65.gridx = 4;
+		gbc_btnNewButton_65.gridy = 6;
+		frame.getContentPane().add(btnNewButton_65, gbc_btnNewButton_65);
+		
+		JButton btnNewButton_66 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_66 = new GridBagConstraints();
+		gbc_btnNewButton_66.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_66.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_66.gridx = 5;
+		gbc_btnNewButton_66.gridy = 6;
+		frame.getContentPane().add(btnNewButton_66, gbc_btnNewButton_66);
+		
+		JButton btnNewButton_67 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_67 = new GridBagConstraints();
+		gbc_btnNewButton_67.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_67.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_67.gridx = 6;
+		gbc_btnNewButton_67.gridy = 6;
+		frame.getContentPane().add(btnNewButton_67, gbc_btnNewButton_67);
+		
+		JButton btnNewButton_68 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_68 = new GridBagConstraints();
+		gbc_btnNewButton_68.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_68.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_68.gridx = 7;
+		gbc_btnNewButton_68.gridy = 6;
+		frame.getContentPane().add(btnNewButton_68, gbc_btnNewButton_68);
+		
+		JButton btnNewButton_69 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_69 = new GridBagConstraints();
+		gbc_btnNewButton_69.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_69.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_69.gridx = 8;
+		gbc_btnNewButton_69.gridy = 6;
+		frame.getContentPane().add(btnNewButton_69, gbc_btnNewButton_69);
+		
+		JButton btnNewButton_70 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_70 = new GridBagConstraints();
+		gbc_btnNewButton_70.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_70.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_70.gridx = 9;
+		gbc_btnNewButton_70.gridy = 6;
+		frame.getContentPane().add(btnNewButton_70, gbc_btnNewButton_70);
+		
+		JButton btnNewButton_71 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_71 = new GridBagConstraints();
+		gbc_btnNewButton_71.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_71.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_71.gridx = 0;
+		gbc_btnNewButton_71.gridy = 7;
+		frame.getContentPane().add(btnNewButton_71, gbc_btnNewButton_71);
+		
+		JButton btnNewButton_72 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_72 = new GridBagConstraints();
+		gbc_btnNewButton_72.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_72.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_72.gridx = 1;
+		gbc_btnNewButton_72.gridy = 7;
+		frame.getContentPane().add(btnNewButton_72, gbc_btnNewButton_72);
+		
+		JButton btnNewButton_73 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_73 = new GridBagConstraints();
+		gbc_btnNewButton_73.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_73.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_73.gridx = 2;
+		gbc_btnNewButton_73.gridy = 7;
+		frame.getContentPane().add(btnNewButton_73, gbc_btnNewButton_73);
+		
+		JButton btnNewButton_74 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_74 = new GridBagConstraints();
+		gbc_btnNewButton_74.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_74.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_74.gridx = 3;
+		gbc_btnNewButton_74.gridy = 7;
+		frame.getContentPane().add(btnNewButton_74, gbc_btnNewButton_74);
+		
+		JButton btnNewButton_75 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_75 = new GridBagConstraints();
+		gbc_btnNewButton_75.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_75.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_75.gridx = 4;
+		gbc_btnNewButton_75.gridy = 7;
+		frame.getContentPane().add(btnNewButton_75, gbc_btnNewButton_75);
+		
+		JButton btnNewButton_76 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_76 = new GridBagConstraints();
+		gbc_btnNewButton_76.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_76.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_76.gridx = 5;
+		gbc_btnNewButton_76.gridy = 7;
+		frame.getContentPane().add(btnNewButton_76, gbc_btnNewButton_76);
+		
+		JButton btnNewButton_77 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_77 = new GridBagConstraints();
+		gbc_btnNewButton_77.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_77.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_77.gridx = 6;
+		gbc_btnNewButton_77.gridy = 7;
+		frame.getContentPane().add(btnNewButton_77, gbc_btnNewButton_77);
+		
+		JButton btnNewButton_78 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_78 = new GridBagConstraints();
+		gbc_btnNewButton_78.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_78.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_78.gridx = 7;
+		gbc_btnNewButton_78.gridy = 7;
+		frame.getContentPane().add(btnNewButton_78, gbc_btnNewButton_78);
+		
+		JButton btnNewButton_79 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_79 = new GridBagConstraints();
+		gbc_btnNewButton_79.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_79.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_79.gridx = 8;
+		gbc_btnNewButton_79.gridy = 7;
+		frame.getContentPane().add(btnNewButton_79, gbc_btnNewButton_79);
+		
+		JButton btnNewButton_80 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_80 = new GridBagConstraints();
+		gbc_btnNewButton_80.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_80.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_80.gridx = 9;
+		gbc_btnNewButton_80.gridy = 7;
+		frame.getContentPane().add(btnNewButton_80, gbc_btnNewButton_80);
+		
+		JButton btnNewButton_81 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_81 = new GridBagConstraints();
+		gbc_btnNewButton_81.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_81.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_81.gridx = 0;
+		gbc_btnNewButton_81.gridy = 8;
+		frame.getContentPane().add(btnNewButton_81, gbc_btnNewButton_81);
+		
+		JButton btnNewButton_82 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_82 = new GridBagConstraints();
+		gbc_btnNewButton_82.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_82.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_82.gridx = 1;
+		gbc_btnNewButton_82.gridy = 8;
+		frame.getContentPane().add(btnNewButton_82, gbc_btnNewButton_82);
+		
+		JButton btnNewButton_83 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_83 = new GridBagConstraints();
+		gbc_btnNewButton_83.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_83.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_83.gridx = 2;
+		gbc_btnNewButton_83.gridy = 8;
+		frame.getContentPane().add(btnNewButton_83, gbc_btnNewButton_83);
+		
+		JButton btnNewButton_84 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_84 = new GridBagConstraints();
+		gbc_btnNewButton_84.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_84.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_84.gridx = 3;
+		gbc_btnNewButton_84.gridy = 8;
+		frame.getContentPane().add(btnNewButton_84, gbc_btnNewButton_84);
+		
+		JButton btnNewButton_85 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_85 = new GridBagConstraints();
+		gbc_btnNewButton_85.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_85.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_85.gridx = 4;
+		gbc_btnNewButton_85.gridy = 8;
+		frame.getContentPane().add(btnNewButton_85, gbc_btnNewButton_85);
+		
+		JButton btnNewButton_86 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_86 = new GridBagConstraints();
+		gbc_btnNewButton_86.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_86.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_86.gridx = 5;
+		gbc_btnNewButton_86.gridy = 8;
+		frame.getContentPane().add(btnNewButton_86, gbc_btnNewButton_86);
+		
+		JButton btnNewButton_87 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_87 = new GridBagConstraints();
+		gbc_btnNewButton_87.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_87.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_87.gridx = 6;
+		gbc_btnNewButton_87.gridy = 8;
+		frame.getContentPane().add(btnNewButton_87, gbc_btnNewButton_87);
+		
+		JButton btnNewButton_88 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_88 = new GridBagConstraints();
+		gbc_btnNewButton_88.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_88.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_88.gridx = 7;
+		gbc_btnNewButton_88.gridy = 8;
+		frame.getContentPane().add(btnNewButton_88, gbc_btnNewButton_88);
+		
+		JButton btnNewButton_89 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_89 = new GridBagConstraints();
+		gbc_btnNewButton_89.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_89.insets = new Insets(0, 0, 5, 5);
+		gbc_btnNewButton_89.gridx = 8;
+		gbc_btnNewButton_89.gridy = 8;
+		frame.getContentPane().add(btnNewButton_89, gbc_btnNewButton_89);
+		
+		JButton btnNewButton_90 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_90 = new GridBagConstraints();
+		gbc_btnNewButton_90.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_90.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_90.gridx = 9;
+		gbc_btnNewButton_90.gridy = 8;
+		frame.getContentPane().add(btnNewButton_90, gbc_btnNewButton_90);
+		
+		JButton btnNewButton_91 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_91 = new GridBagConstraints();
+		gbc_btnNewButton_91.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_91.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_91.gridx = 0;
+		gbc_btnNewButton_91.gridy = 9;
+		frame.getContentPane().add(btnNewButton_91, gbc_btnNewButton_91);
+		
+		JButton btnNewButton_92 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_92 = new GridBagConstraints();
+		gbc_btnNewButton_92.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_92.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_92.gridx = 1;
+		gbc_btnNewButton_92.gridy = 9;
+		frame.getContentPane().add(btnNewButton_92, gbc_btnNewButton_92);
+		
+		JButton btnNewButton_93 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_93 = new GridBagConstraints();
+		gbc_btnNewButton_93.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_93.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_93.gridx = 2;
+		gbc_btnNewButton_93.gridy = 9;
+		frame.getContentPane().add(btnNewButton_93, gbc_btnNewButton_93);
+		
+		JButton btnNewButton_94 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_94 = new GridBagConstraints();
+		gbc_btnNewButton_94.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_94.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_94.gridx = 3;
+		gbc_btnNewButton_94.gridy = 9;
+		frame.getContentPane().add(btnNewButton_94, gbc_btnNewButton_94);
+		
+		JButton btnNewButton_95 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_95 = new GridBagConstraints();
+		gbc_btnNewButton_95.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_95.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_95.gridx = 4;
+		gbc_btnNewButton_95.gridy = 9;
+		frame.getContentPane().add(btnNewButton_95, gbc_btnNewButton_95);
+		
+		JButton btnNewButton_96 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_96 = new GridBagConstraints();
+		gbc_btnNewButton_96.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_96.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_96.gridx = 5;
+		gbc_btnNewButton_96.gridy = 9;
+		frame.getContentPane().add(btnNewButton_96, gbc_btnNewButton_96);
+		
+		JButton btnNewButton_97 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_97 = new GridBagConstraints();
+		gbc_btnNewButton_97.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_97.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_97.gridx = 6;
+		gbc_btnNewButton_97.gridy = 9;
+		frame.getContentPane().add(btnNewButton_97, gbc_btnNewButton_97);
+		
+		JButton btnNewButton_98 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_98 = new GridBagConstraints();
+		gbc_btnNewButton_98.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_98.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_98.gridx = 7;
+		gbc_btnNewButton_98.gridy = 9;
+		frame.getContentPane().add(btnNewButton_98, gbc_btnNewButton_98);
+		
+		JButton btnNewButton_99 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_99 = new GridBagConstraints();
+		gbc_btnNewButton_99.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_99.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNewButton_99.gridx = 8;
+		gbc_btnNewButton_99.gridy = 9;
+		frame.getContentPane().add(btnNewButton_99, gbc_btnNewButton_99);
+		
+		JButton btnNewButton_100 = new JButton("");
+		GridBagConstraints gbc_btnNewButton_100 = new GridBagConstraints();
+		gbc_btnNewButton_100.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_100.gridx = 9;
+		gbc_btnNewButton_100.gridy = 9;
+		frame.getContentPane().add(btnNewButton_100, gbc_btnNewButton_100);
+		*/
+		
+		
+	}
+}

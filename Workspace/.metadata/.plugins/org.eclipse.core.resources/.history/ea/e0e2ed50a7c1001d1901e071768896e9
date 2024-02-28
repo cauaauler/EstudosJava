@@ -1,0 +1,14 @@
+package exemplos;
+
+public class Exemplo2 {
+	
+	public static void main(String[] args) {
+		
+		for(int x = 0; x<3; x++) {
+			for(String i=0; i<=x; i++) { //1ºvalor inicial 2º condição 3º incremento
+				System.out.print("*");
+		}		
+			}
+	}
+
+}

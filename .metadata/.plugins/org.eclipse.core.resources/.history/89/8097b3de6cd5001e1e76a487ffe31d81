@@ -1,0 +1,8 @@
+package classes;
+
+public class Disciplina extends Aluno{
+	//String nome;
+	Professor professor;
+	Aluno[] alunos;
+
+}

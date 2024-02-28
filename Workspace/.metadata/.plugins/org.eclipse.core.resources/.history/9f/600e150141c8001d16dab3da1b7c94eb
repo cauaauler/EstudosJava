@@ -1,0 +1,13 @@
+package exercícios;
+
+public class numeros {
+	public static void main(String[] args) {
+		
+		int[] numeros = {12, 45, 63, 23, 5, 43, 54, 87, 21, 67};
+		
+		for(int i = 0; i<=10;i++) {
+			System.out.println((i+1)+"º número: "+ numeros[i]);
+		}
+	}
+
+}

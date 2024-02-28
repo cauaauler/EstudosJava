@@ -1,0 +1,355 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import com.jgoodies.forms.layout.FormLayout;
+import com.jgoodies.forms.layout.ColumnSpec;
+import com.jgoodies.forms.layout.RowSpec;
+import net.miginfocom.swing.MigLayout;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+
+public class Combate {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Combate window = new Combate();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Combate() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 714, 451);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(new GridLayout(10, 10, 0, 0));
+		
+		JButton btnNewButton_1 = new JButton("");
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("");
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("");
+		frame.getContentPane().add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("");
+		frame.getContentPane().add(btnNewButton_4);
+		
+		JButton btnNewButton_5 = new JButton("");
+		frame.getContentPane().add(btnNewButton_5);
+		
+		JButton btnNewButton_6 = new JButton("");
+		frame.getContentPane().add(btnNewButton_6);
+		
+		JButton btnNewButton_7 = new JButton("");
+		frame.getContentPane().add(btnNewButton_7);
+		
+		JButton btnNewButton_8 = new JButton("");
+		frame.getContentPane().add(btnNewButton_8);
+		
+		JButton btnNewButton_9 = new JButton("");
+		frame.getContentPane().add(btnNewButton_9);
+		
+		JButton btnNewButton_10 = new JButton("");
+		frame.getContentPane().add(btnNewButton_10);
+		
+		JButton btnNewButton = new JButton("");
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_11 = new JButton("");
+		frame.getContentPane().add(btnNewButton_11);
+		
+		JButton btnNewButton_12 = new JButton("");
+		frame.getContentPane().add(btnNewButton_12);
+		
+		JButton btnNewButton_14 = new JButton("");
+		frame.getContentPane().add(btnNewButton_14);
+		
+		JButton btnNewButton_13 = new JButton("");
+		frame.getContentPane().add(btnNewButton_13);
+		
+		JButton btnNewButton_16 = new JButton("");
+		frame.getContentPane().add(btnNewButton_16);
+		
+		JButton btnNewButton_15 = new JButton("");
+		frame.getContentPane().add(btnNewButton_15);
+		
+		JButton btnNewButton_18 = new JButton("");
+		frame.getContentPane().add(btnNewButton_18);
+		
+		JButton btnNewButton_17 = new JButton("");
+		frame.getContentPane().add(btnNewButton_17);
+		
+		JButton btnNewButton_20 = new JButton("");
+		frame.getContentPane().add(btnNewButton_20);
+		
+		JButton btnNewButton_21 = new JButton("");
+		frame.getContentPane().add(btnNewButton_21);
+		
+		JButton btnNewButton_19 = new JButton("");
+		frame.getContentPane().add(btnNewButton_19);
+		
+		JButton btnNewButton_22 = new JButton("");
+		frame.getContentPane().add(btnNewButton_22);
+		
+		JButton btnNewButton_24 = new JButton("");
+		frame.getContentPane().add(btnNewButton_24);
+		
+		JButton btnNewButton_23 = new JButton("");
+		frame.getContentPane().add(btnNewButton_23);
+		
+		JButton btnNewButton_27 = new JButton("");
+		frame.getContentPane().add(btnNewButton_27);
+		
+		JButton btnNewButton_26 = new JButton("");
+		frame.getContentPane().add(btnNewButton_26);
+		
+		JButton btnNewButton_25 = new JButton("");
+		frame.getContentPane().add(btnNewButton_25);
+		
+		JButton btnNewButton_28 = new JButton("");
+		frame.getContentPane().add(btnNewButton_28);
+		
+		JButton btnNewButton_30 = new JButton("");
+		frame.getContentPane().add(btnNewButton_30);
+		
+		JButton btnNewButton_32 = new JButton("");
+		frame.getContentPane().add(btnNewButton_32);
+		
+		JButton btnNewButton_29 = new JButton("");
+		frame.getContentPane().add(btnNewButton_29);
+		
+		JButton btnNewButton_31 = new JButton("");
+		frame.getContentPane().add(btnNewButton_31);
+		
+		JButton btnNewButton_36 = new JButton("");
+		frame.getContentPane().add(btnNewButton_36);
+		
+		JButton btnNewButton_33 = new JButton("");
+		frame.getContentPane().add(btnNewButton_33);
+		
+		JButton btnNewButton_35 = new JButton("");
+		frame.getContentPane().add(btnNewButton_35);
+		
+		JButton btnNewButton_34 = new JButton("");
+		frame.getContentPane().add(btnNewButton_34);
+		
+		JButton btnNewButton_37 = new JButton("");
+		frame.getContentPane().add(btnNewButton_37);
+		
+		JButton btnNewButton_38 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38);
+		
+		JButton btnNewButton_38_2 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_2);
+		
+		JButton btnNewButton_38_1 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_1);
+		
+		JButton btnNewButton_38_3 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_3);
+		
+		JButton btnNewButton_38_4 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_4);
+		
+		JButton btnNewButton_38_7 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_7);
+		
+		JButton btnNewButton_38_6 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_6);
+		
+		JButton btnNewButton_38_5 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_5);
+		
+		JButton btnNewButton_38_12 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_12);
+		
+		JButton btnNewButton_38_8 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_8);
+		
+		JButton btnNewButton_38_9 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_9);
+		
+		JButton btnNewButton_38_13 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_13);
+		
+		JButton btnNewButton_38_16 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_16);
+		
+		JButton btnNewButton_38_15 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_15);
+		
+		JButton btnNewButton_38_14 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_14);
+		
+		JButton btnNewButton_38_10 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_10);
+		
+		JButton btnNewButton_38_11 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_11);
+		
+		JButton btnNewButton_38_17 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_17);
+		
+		JButton btnNewButton_38_18 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_18);
+		
+		JButton btnNewButton_38_19 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_19);
+		
+		JButton btnNewButton_38_20 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_20);
+		
+		JButton btnNewButton_38_25 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_25);
+		
+		JButton btnNewButton_38_22 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_22);
+		
+		JButton btnNewButton_38_21 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_21);
+		
+		JButton btnNewButton_38_23 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_23);
+		
+		JButton btnNewButton_38_24 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_24);
+		
+		JButton btnNewButton_38_32 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_32);
+		
+		JButton btnNewButton_38_34 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_34);
+		
+		JButton btnNewButton_38_33 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_33);
+		
+		JButton btnNewButton_38_26 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_26);
+		
+		JButton btnNewButton_38_27 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_27);
+		
+		JButton btnNewButton_38_28 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_28);
+		
+		JButton btnNewButton_38_29 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_29);
+		
+		JButton btnNewButton_38_30 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_30);
+		
+		JButton btnNewButton_38_31 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_31);
+		
+		JButton btnNewButton_38_35 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_35);
+		
+		JButton btnNewButton_38_36 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_36);
+		
+		JButton btnNewButton_38_37 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_37);
+		
+		JButton btnNewButton_38_43 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_43);
+		
+		JButton btnNewButton_38_42 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_42);
+		
+		JButton btnNewButton_38_38 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_38);
+		
+		JButton btnNewButton_38_39 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_39);
+		
+		JButton btnNewButton_38_40 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_40);
+		
+		JButton btnNewButton_38_41 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_41);
+		
+		JButton btnNewButton_38_44 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_44);
+		
+		JButton btnNewButton_38_45 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_45);
+		
+		JButton btnNewButton_38_46 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_46);
+		
+		JButton btnNewButton_38_47 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_47);
+		
+		JButton btnNewButton_38_48 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_48);
+		
+		JButton btnNewButton_38_49 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_49);
+		
+		JButton btnNewButton_38_52 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_52);
+		
+		JButton btnNewButton_38_50 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_50);
+		
+		JButton btnNewButton_38_51 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_51);
+		
+		JButton btnNewButton_38_53 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_53);
+		
+		JButton btnNewButton_38_54 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_54);
+		
+		JButton btnNewButton_38_55 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_55);
+		
+		JButton btnNewButton_38_56 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_56);
+		
+		JButton btnNewButton_38_57 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_57);
+		
+		JButton btnNewButton_38_58 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_58);
+		
+		JButton btnNewButton_38_59 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_59);
+		
+		JButton btnNewButton_38_60 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_60);
+		
+		JButton btnNewButton_38_62 = new JButton("");
+		frame.getContentPane().add(btnNewButton_38_62);
+		
+		
+	}
+}

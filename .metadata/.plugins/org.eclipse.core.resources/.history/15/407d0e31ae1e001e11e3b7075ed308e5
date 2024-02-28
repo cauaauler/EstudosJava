@@ -1,0 +1,8 @@
+package exer1;
+
+public class Banda {
+	
+	public String nome;
+	public String estilo;
+
+}

@@ -1,0 +1,15 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer05 {
+	public static void main(String[] args) {
+		 Scanner leitor = new Scanner(System.in);
+		 
+		 System.out.println("Número: ");
+		 int n = Integer.parseInt(leitor.nextLine());
+		 
+		 String[] nomes = new String[n];
+	}
+
+}

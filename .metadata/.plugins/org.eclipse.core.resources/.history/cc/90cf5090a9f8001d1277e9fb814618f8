@@ -1,0 +1,16 @@
+package jogo;
+
+import jogo.pessoas.Treinador;
+
+public class Exemplo02 {
+	
+	public static void main(String[] args) {
+		
+		Treinador t1 = new Treinador();
+		Treinador t2 = new Treinador();
+		Juiz j = new Juiz();
+		Jogador j1 = new Jogador();
+		
+	}
+
+}

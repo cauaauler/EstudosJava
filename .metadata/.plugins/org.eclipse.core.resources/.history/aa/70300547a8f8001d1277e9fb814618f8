@@ -1,0 +1,7 @@
+package jogo.pessoas;
+
+public class Jogador {
+	private String nome;
+	
+	
+}

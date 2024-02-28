@@ -1,0 +1,21 @@
+package exercicios;
+
+import javax.swing.JOptionPane;
+
+public class Exer01 {
+	public static void main(String[] args) {
+		
+		int quantidadeStrings = 10;
+		double letras = 0;
+		
+		for (int i = 0; i < quantidadeStrings; i++) {
+			String palavras = JOptionPane.showInputDialog("Informe uma string: ");
+			for (int j = 0; j < palavras.length(); j++) {
+				letras++;
+			}
+		}
+		double media = letras/quantidadeStrings;
+		System.out.println(media);
+	}
+
+}

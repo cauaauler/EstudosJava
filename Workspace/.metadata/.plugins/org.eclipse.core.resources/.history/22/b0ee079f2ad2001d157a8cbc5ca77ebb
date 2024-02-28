@@ -1,0 +1,20 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer06 {
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.println("         CARDÁPIO    ");
+		System.out.println("Especificação Código Preço\r\n"
+				+ "Cachorro Quente 1   R$ 10,50"
+				+ "Bauru Simples   2   R$ 22,50\r\n"
+				+ "Bauru com Ovo   3   R$ 25,50\r\n"
+				+ "Hambúrguer      4   R$ 18,00\r\n"
+				+ "Cheeseburguer   5   R$ 18,00\r\n"
+				+ "Refrigerante    6   R$ 6,00");
+	}
+
+}

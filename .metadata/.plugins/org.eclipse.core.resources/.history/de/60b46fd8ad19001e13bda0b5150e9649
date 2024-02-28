@@ -1,0 +1,102 @@
+package exer1;
+
+import java.awt.EventQueue;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.JToolBar;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextPane;
+import javax.swing.JFormattedTextField;
+
+public class TesteBanda {
+
+	private JFrame frame;
+	ArrayList<Banda> bandas = new ArrayList<Banda>();
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TesteBanda window = new TesteBanda();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public TesteBanda() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Banda");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmNewMenuItem_Cadastrar = new JMenuItem("Cadastrar nova banda");
+		mnNewMenu.add(mntmNewMenuItem_Cadastrar);
+		
+		JMenuItem mntmNewMenuItem_Remover = new JMenuItem("Remover uma banda");
+		mnNewMenu.add(mntmNewMenuItem_Remover);
+		
+		JMenuItem mntmNewMenuItem_Consultar = new JMenuItem("Consultar bandas");
+		mnNewMenu.add(mntmNewMenuItem_Consultar);
+		
+		JMenuItem mntmNewMenuItemSair = new JMenuItem("Sair");
+		mnNewMenu.add(mntmNewMenuItemSair);
+		frame.getContentPane().setLayout(new CardLayout(0, 0));
+		
+		JPanel panel_cadastrar = new JPanel();
+		frame.getContentPane().add(panel_cadastrar, "name_7034346774500");
+		panel_cadastrar.setLayout(null);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(163, 118, 89, 23);
+		panel_cadastrar.add(btnNewButton);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(85, 77, 46, 14);
+		panel_cadastrar.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setBounds(185, 77, 46, 14);
+		panel_cadastrar.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(331, 77, 46, 14);
+		panel_cadastrar.add(lblNewLabel_2);
+		
+		JFormattedTextField formattedTextField = new JFormattedTextField();
+		formattedTextField.setBounds(78, 102, 53, 20);
+		panel_cadastrar.add(formattedTextField);
+		
+		JPanel panel_remover = new JPanel();
+		frame.getContentPane().add(panel_remover, "name_7036277853300");
+		
+		JPanel panel_consultar = new JPanel();
+		frame.getContentPane().add(panel_consultar, "name_7037911678400");
+	}
+}

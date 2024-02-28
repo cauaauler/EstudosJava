@@ -1,0 +1,22 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer4 {
+
+	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		
+		
+		System.out.print("Informe o raio da esfera: ");
+		int raio = Integer.parseInt(leitor.nextLine());
+	
+		double pi = 3.14159;
+		
+		double volume = 4/3*pi * (raio*raio*raio)	;
+		
+		System.out.println("O volume da esfera é: " + volume);
+	}
+	
+
+}

@@ -1,0 +1,21 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		try {
+			
+		} catch (ArithmeticException e) {
+			// TODO: handle exception
+		}
+		
+		Matematica c = new Matematica();
+		
+		System.out.println(c.dividir(Integer.parseInt(leitor.nextLine()), Integer.parseInt(leitor.nextLine())));
+	}
+
+}

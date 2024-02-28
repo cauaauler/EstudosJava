@@ -1,0 +1,16 @@
+package exemplo01;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+		
+		int t = 1000;
+		int[] numeros = new int[t];
+		
+		//preencher o array já ordenado
+		for (int i = 0; i < numeros.length; i++) {
+			numeros[i] = i*2;
+		}
+	}
+
+}

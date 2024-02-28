@@ -1,0 +1,16 @@
+package desafios;
+
+public class Desafio1 {
+	public static void main(String[] args) {
+		
+		char[] letras = {'S', 'R', 'F', 'I'};
+		
+		for(int i =3;i>=0;i--) {
+			
+			
+			System.out.print(letras[i]);
+			char letra = letras[i];
+			System.out.println("");
+		}
+	}
+}	

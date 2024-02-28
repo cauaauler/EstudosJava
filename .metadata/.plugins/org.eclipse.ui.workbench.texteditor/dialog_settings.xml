@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="ENTROU"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="ENTROU"/>
+			<item value="red"/>
+			<item value="null"/>
+			<item value="minhaVez"/>
+			<item value="suaVez"/>
+			<item value="setBackground(null)"/>
+			<item value="saida"/>
+			<item value="system.out"/>
+			<item value="lastButton"/>
+			<item value="backupIn"/>
+			<item value="setName"/>
+			<item value="backupI"/>
+			<item value="&quot;PRONTO&quot;"/>
+			<item value="gameStart"/>
+			<item value=".setText"/>
+		</list>
+		<list key="replacehistory">
+			<item value="botaoClicado"/>
+			<item value="int"/>
+			<item value="2"/>
+			<item value="visitante"/>
+			<item value="4"/>
+			<item value="3"/>
+			<item value="1"/>
+			<item value="c2"/>
+			<item value="palavras"/>
+			<item value="nome"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1494"/>
+		<item key="DIALOG_Y_ORIGIN" value="110"/>
+		<item key="DIALOG_WIDTH" value="385"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

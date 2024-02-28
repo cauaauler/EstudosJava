@@ -1,0 +1,22 @@
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exer2 {
+
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Digite um número: ");
+		int n = Integer.parseInt(leitor.nextLine());
+		
+		if (n%1 == 0 && n%n == 0) {
+			
+			System.out.println("O número é primo");
+			
+		}
+
+	}
+
+}

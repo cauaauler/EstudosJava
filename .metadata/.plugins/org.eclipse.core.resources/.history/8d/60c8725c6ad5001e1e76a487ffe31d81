@@ -1,0 +1,15 @@
+package classes;
+
+public class Aluno {
+
+	String nome;
+	String matricula;
+	double[] saldo;
+	Disciplina[] disciplinas;
+	
+	
+
+public void AdicionarDinheiro() {
+	
+}
+}

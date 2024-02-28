@@ -1,0 +1,10 @@
+package ex2;
+
+public class Administrador extends Empregado{
+	public double ajudaDeCustos;
+	
+	public double calcularSalarioAdm() {
+		double salarioAdm = salario + ajudaDeCustos;
+		return salarioAdm;
+	}
+}

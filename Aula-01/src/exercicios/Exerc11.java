@@ -1,0 +1,22 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exerc11 {
+	
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Número: ");
+		int n = Integer.parseInt(leitor.nextLine());
+		
+		int antecessor = n-1;
+		int sucessor = n+1;
+		
+		System.out.print("O antecessor do número é: "+antecessor);
+		System.out.print("O sucessor do número é: "+sucessor);
+		
+	
+}
+}

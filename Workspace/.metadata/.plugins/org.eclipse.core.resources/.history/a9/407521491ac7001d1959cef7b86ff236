@@ -1,0 +1,12 @@
+package exemplos;
+
+public class Exemplo1 {
+	
+	public static void main(String[] args) {
+		
+		int[] numeros = {10, 20, 30};
+		
+		System.out.println(numeros[0]);
+		System.out.println(numeros.lenght);
+	}
+}

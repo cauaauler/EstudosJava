@@ -1,0 +1,29 @@
+package exemplos;
+
+public class Exemplo1 {
+	
+	public static void main(String[] args) {
+		
+		int[] numeros = {10, 20, 30, 40};
+		
+		for(int i = 0; i < numeros.length; i++) {
+			System.out.println(numeros[i]);
+		
+			}
+		String[] nomes = {"caua", "fabricio", "auler"};
+		
+		for(int i = 0; i < nomes.length; i++) {
+			System.out.print(nomes[i]+" ");
+		}
+		
+		double[] numeros2 = {20.5, 30, 42.7, 8.63};
+		
+		double soma = 0;
+		for (int i = 0; i < numeros2.length; i++) {
+			soma = numeros2[i]+soma;
+			
+		}
+		System.out.println();
+		System.out.println(soma);
+	}
+}

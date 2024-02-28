@@ -1,0 +1,20 @@
+package exemplos;
+
+public class Exemplo2 {
+		
+	public static void main(String[] args) {
+		
+		int  x = 10;
+		double d = x;
+		float f = x;
+		
+		System.out.println(x);
+		System.out.println(d);
+		System.out.println(f);
+	}
+	double d2 = 10.5;
+	float f2 = 20.7f;
+	
+	int i1 = d2;
+	int i2 = f2;
+}

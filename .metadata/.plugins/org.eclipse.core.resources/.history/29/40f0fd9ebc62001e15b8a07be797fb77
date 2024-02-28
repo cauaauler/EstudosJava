@@ -1,0 +1,14 @@
+package exemplos;
+
+public class Exemplo03 {
+	
+	public static void main(String[] args) {
+		
+		int idade = 17;
+		
+		Motorista m = new Motorista(idade);
+		
+		System.out.printf("Idade: %d%n", m.getIdade());
+	}
+
+}

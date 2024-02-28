@@ -1,0 +1,15 @@
+package ex2;
+
+public class Teste {
+	public static void main(String[] args) {
+		
+		Fornecedor f1 = new Fornecedor();
+		f1.valorCredito = 10000;
+		f1.valorDivida = 200;
+		
+		Empregado e1 = new Empregado();
+		e1.codigoSetor = 3;
+		e1.salarioBase = 200;
+		e1.imposto = 10;
+	}
+}

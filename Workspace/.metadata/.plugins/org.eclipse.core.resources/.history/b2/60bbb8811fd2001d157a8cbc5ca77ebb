@@ -1,0 +1,9 @@
+package exercicios;
+
+public class Exer04 {
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(Systme.in);
+	}
+
+}

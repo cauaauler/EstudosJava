@@ -1,0 +1,20 @@
+package classes;
+
+public class Testar {
+
+	public static void main(String[] args) {
+		
+		Disciplina Matematica = new Disciplina();
+		Disciplina Portugues = new Disciplina();
+		Aluno Jorge = new Aluno("Jorge", "123", Matematica);
+		Aluno Renan = new Aluno();
+		Professor Roberto = new Professor();
+		Professor Adalberto = new Professor();
+		
+		Saldo aluno01 = new Saldo();
+		
+		aluno01.aluno = Jorge;
+		
+	}
+
+}

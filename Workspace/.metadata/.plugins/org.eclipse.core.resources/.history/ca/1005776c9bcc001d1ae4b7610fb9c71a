@@ -1,0 +1,12 @@
+package exemplos;
+
+public class Exemplo1 {
+	
+	public static void main(String[] args) {
+		
+		String cidade = "Feliz";
+		
+		System.out.println(cidade.charAt(20));
+	}
+
+}

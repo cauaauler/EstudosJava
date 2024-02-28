@@ -1,0 +1,6 @@
+package jogo.pessoas;
+
+public class Juiz {
+	private String nome;
+	
+}

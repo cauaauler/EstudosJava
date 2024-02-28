@@ -1,0 +1,8 @@
+package jogo;
+
+public class Exercito {
+	private int forca;
+	private String nome;
+	private int quantidade;
+
+}

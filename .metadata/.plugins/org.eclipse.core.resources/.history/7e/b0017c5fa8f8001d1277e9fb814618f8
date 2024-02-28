@@ -1,0 +1,13 @@
+package jogo;
+
+import jogo.misc.Bola;
+import jogo.misc.Quadra;
+import jogo.pessoas.Juiz;
+
+public class Futebol {
+	private Juiz juiz;
+	private Quadra quadra;
+	private Bola bola;
+	private Equipe mandante;
+	private Equipe visitante;
+}

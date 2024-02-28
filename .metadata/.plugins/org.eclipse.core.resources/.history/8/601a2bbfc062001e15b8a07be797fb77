@@ -1,0 +1,18 @@
+package exercicios;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		Matematica c = new Matematica();
+		
+		System.out.println(c.dividir(6, 0));
+	}
+
+}

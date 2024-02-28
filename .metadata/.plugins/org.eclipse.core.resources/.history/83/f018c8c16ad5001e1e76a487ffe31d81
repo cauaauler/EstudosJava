@@ -1,0 +1,15 @@
+package classes;
+
+public class Testar {
+
+	public static void main(String[] args) {
+		
+		Disciplina Matematica = new Disciplina();
+		Disciplina Portugues = new Disciplina();
+		Aluno Jorge = new Aluno();
+		Aluno Renan = new Aluno();
+		Professor Roberto = new Professor();
+		Professor Adalberto = new Professor();
+	}
+
+}

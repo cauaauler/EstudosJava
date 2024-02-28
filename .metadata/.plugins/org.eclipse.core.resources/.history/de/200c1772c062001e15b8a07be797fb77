@@ -1,0 +1,12 @@
+package exercicios;
+
+public class Teste {
+	
+	public static void main(String[] args) {
+		
+		Matematica c = new Matematica();
+		
+		System.out.println(c.dividir(2, 3));
+	}
+
+}

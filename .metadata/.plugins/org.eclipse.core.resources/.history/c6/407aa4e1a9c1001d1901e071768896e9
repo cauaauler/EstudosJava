@@ -1,0 +1,18 @@
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exer1 {
+	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.println("NÚMERO DE TURMAS: ");
+		int turmas = Integer.parseInt(leitor.nextLine());
+		
+		for (int i = 0; i< turmas; i++) {
+			System.out.print("Quantidade de alunos da turma "+ (i+1));
+		}
+		
+	}
+
+}

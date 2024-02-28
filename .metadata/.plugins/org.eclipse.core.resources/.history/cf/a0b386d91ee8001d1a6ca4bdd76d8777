@@ -1,0 +1,43 @@
+package exer3_OO;
+
+public class Permutacao {
+	
+	public String n1;
+	public String n2;
+	public String maior;
+	public String menor;
+	
+	public int x;
+	public int i;
+	
+	public void ehMaior() {
+		if(n1.length() >= n2.length()) {
+			maior = n1;
+			menor = n2;
+		}else {
+			maior = n2;
+			menor = n1;
+		}
+	}
+	
+	public void ehPermutacao() {
+		while(x < maior.length()) {
+			if(maior.charAt(x) == menor.charAt(i)) {
+				x++;
+				
+			}else if(menor.length() > 1) {
+				i++;
+			}else if (maior.length() <= x){
+				x++;
+			}
+			if(x==i) {
+				System.out.println("são permutações");
+			}else {
+				System.out.println("n");
+			}
+				
+			
+		}
+		
+	}
+}

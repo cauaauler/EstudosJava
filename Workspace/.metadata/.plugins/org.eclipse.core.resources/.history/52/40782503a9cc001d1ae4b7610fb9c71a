@@ -1,0 +1,15 @@
+package exemplos;
+
+import javax.swing.JOptionPane;
+
+public class Exemplo04 {
+	public static void main(String[] args) {
+		
+		JOptionPane.showMessageDialog(null, "ola pessoal");
+		
+		String nome = JOptionPane.showInputDialog("Informe seu CPF");
+		
+		JOptionPane.showMessageDialog(null, "Olá" + nome);
+	}
+
+}

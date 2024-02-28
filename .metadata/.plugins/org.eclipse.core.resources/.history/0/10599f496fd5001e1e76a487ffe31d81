@@ -1,0 +1,17 @@
+package classes;
+
+public class Disciplina{
+	//String nome;
+	Professor professor;
+	Aluno[] alunos;
+	
+	
+	public Disciplina(Professor professor, Aluno[] alunos) {
+		super();
+		this.professor = professor;
+		this.alunos = alunos;
+	}
+	
+	
+
+}

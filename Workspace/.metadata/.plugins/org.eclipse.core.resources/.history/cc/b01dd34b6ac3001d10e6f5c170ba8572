@@ -1,0 +1,29 @@
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exer6 {
+
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.println("Números a serem informados: ");
+		int n = Integer.parseInt(leitor.nextLine());
+		
+		int maior = 0;
+		int menor = 1000000;
+		for(int i=0;i<=n;i++)
+		{
+			System.out.println(i+1"º número: ");
+			if(n>= maior) {
+				maior = n;
+			}else {
+				menor = n;
+				
+			}
+			
+		}
+	}
+
+}

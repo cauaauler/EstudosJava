@@ -1,0 +1,15 @@
+package exemplos;
+
+public class Exemplo2 {
+		
+	public static void main(String[] args) {
+		
+		int  x = 10;
+		double d = x;
+		float f = x;
+		
+		System.out.println(x);
+		System.out.println(d);
+		System.out.println(f);
+	}
+}

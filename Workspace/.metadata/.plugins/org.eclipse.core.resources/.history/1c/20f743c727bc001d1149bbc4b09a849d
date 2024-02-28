@@ -1,0 +1,33 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer1 {
+	
+	public static void main(String[] args) {
+	
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		
+		System.out.print("Informe o primeiro número(inteiro): ");
+		String n1 = leitor.nextLine();
+		
+		System.out.print("Informe o segundo número(inteiro): ");
+		String n2 = leitor.nextLine();
+	
+		
+		int soma = Integer.parseInt(n1) + Integer.parseInt(n2);
+		int	subtracao = Integer.parseInt(n1) - Integer.parseInt(n2);
+		int multiplicacao = Integer.parseInt(n1) * Integer.parseInt(n2);
+		int divisao = Integer.parseInt(n1) / Integer.parseInt(n2);
+		int resto = Integer.parseInt(n1) % Integer.parseInt(n2);
+		
+	
+		System.out.println("Resultado da soma: "+soma);
+		System.out.println("Resultado da subtração: "+subtracao);
+		System.out.println("Resultado da multiplicação: "+multiplicacao);
+		System.out.println("Resultado da divisão: "+divisao + ", com resto "+resto);	
+	}
+
+}

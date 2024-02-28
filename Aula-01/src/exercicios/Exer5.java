@@ -1,0 +1,33 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer5 {
+
+	public static void main(String[] args) {
+		
+		double salario;
+		double percentual;
+		double aumento;
+		double salario_novo;
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Informe o salário: ");
+		salario = Double.parseDouble(leitor.nextLine());
+		
+		System.out.print("Porcentagem de aumento: ");
+		percentual = Double.parseDouble(leitor.nextLine());
+		
+		aumento = salario * percentual/100;
+		salario_novo = salario+aumento;
+		
+		System.out.println("Seu salário sem aumento é de: R$"+salario);
+		System.out.println("O percentual de aumento é de: "+percentual+"%");
+		System.out.println("O salário com aumento é de: R$"+salario_novo);
+		System.out.println("O aumento foi de: R$"+aumento);
+		
+
+	}
+
+}

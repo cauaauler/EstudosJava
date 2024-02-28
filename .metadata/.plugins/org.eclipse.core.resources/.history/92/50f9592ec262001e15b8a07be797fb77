@@ -1,0 +1,8 @@
+package exercicios;
+
+public class Matematica {
+	
+	public int dividir(int a,int b) {
+		return a/b;
+	}
+}

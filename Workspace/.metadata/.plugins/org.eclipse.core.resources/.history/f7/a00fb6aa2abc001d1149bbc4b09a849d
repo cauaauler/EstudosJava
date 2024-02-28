@@ -1,0 +1,27 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exer6 {
+
+	public static void main(String[] args) {
+		Scanner leitor = new Scanner(System.in);
+		
+		System.out.print("Quilometragem inicial do carro: ");
+		int km_inicial = leitor.nextInt();
+		
+		System.out.print("Quilometragem final do carro: ");
+		int km_final = leitor.nextInt();
+		
+		System.out.print("Litros de combustível gastos: ");
+		int litros = leitor.nextInt();
+		
+		int km_total = km_final - km_inicial;
+		int gasto = km_total / litros;
+		
+		System.out.println("Média de consume de gasolina por "
+				+ "quilômetro rodado: "+gasto);
+
+	}
+
+}

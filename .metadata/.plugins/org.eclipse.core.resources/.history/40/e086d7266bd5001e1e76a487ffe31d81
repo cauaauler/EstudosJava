@@ -1,0 +1,19 @@
+package classes;
+
+public class Aluno extends Saldo {
+
+	String nome;
+	String matricula;
+	//double[] saldo;
+	//Disciplina[] disciplinas;
+
+public Aluno(String nome, String matricula) {
+		//super();
+		this.nome = nome;
+		this.matricula = matricula;
+	}
+
+public void AdicionarDinheiro(double deposito) {
+	deposito += Saldo.saldo;
+}
+}

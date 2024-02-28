@@ -1,0 +1,13 @@
+package exer02;
+
+public class Exer02 {
+	
+	public static void main(String[] args) {
+		
+		Correntista c  = new Correntista();
+		c.setNome("Romário");
+		c.setSaldo(2);
+		
+	}
+
+}

@@ -1,0 +1,22 @@
+package exercicios;
+
+import java.util.Scanner;
+
+public class Exerc10 {
+	public static void main(String[] args) {
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		
+		System.out.print("Valor do salário mínimo: ");
+		float salario_min = leitor.nextInt();
+		
+		System.out.print("Valor do seu salário: ");
+		float salario = leitor.nextInt();
+		
+		float conta = salario/salario_min;
+		
+		System.out.print("Você recebe "+conta+" salários mínimos");
+	}
+
+}

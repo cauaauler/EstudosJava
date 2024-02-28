@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    
+    public static void main(String[] args) throws IOException {
+        
+    	
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader leitor = new BufferedReader(ir);
+        
+        double r = Double.parseDouble(leitor.readLine());
+        
+        double volume = (4/3)*3.14159*(r*r*r);
+        
+        System.out.printf("VOLUME = %.4f %n.", volume);
+		}
+}       
+       
+        
+   

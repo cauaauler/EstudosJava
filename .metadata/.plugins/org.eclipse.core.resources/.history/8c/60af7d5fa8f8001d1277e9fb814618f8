@@ -1,0 +1,6 @@
+package jogo.misc;
+
+public class Bola {
+	private String marca;
+
+}

@@ -1,0 +1,111 @@
+package exercicio;
+
+import java.awt.EventQueue;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+public class ClienteGUI {
+
+	private JFrame frmCliente;
+	private static JTextField textField;
+	private static JTextArea textArea;
+	private JButton btnButton;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ClienteGUI window = new ClienteGUI();
+					window.frmCliente.setVisible(true);
+					
+					//novo
+					Socket cliente = new Socket("127.0.0.1", 83);
+					PrintWriter saida = new PrintWriter(cliente.getOutputStream());
+					BufferedReader entrada = new BufferedReader(new InputStreamReader(cliente.getInputStream()));
+					Scanner leitor = new Scanner(System.in);
+
+					Thread remetente = new Thread(new Runnable() {
+						public void run() {
+							while (true) {
+								String mensagem = textField.getText();
+								saida.println(mensagem);
+								saida.flush();
+							}
+						}
+					});
+
+					remetente.start();
+
+					Thread receptor = new Thread(new Runnable() {
+						public void run() {
+							try {
+								String mensagem = entrada.readLine();
+								while (mensagem != null) {
+									textArea.append("Servidor: " + mensagem);
+									mensagem = entrada.readLine();
+								}
+
+								System.out.println("Servidor offline.");
+								saida.close();
+								cliente.close();
+
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+					});
+
+					receptor.start();
+
+					System.out.println("Cliente online.");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public ClienteGUI() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frmCliente = new JFrame();
+		frmCliente.setTitle("CLIENTE");
+		frmCliente.setBounds(100, 100, 500, 400);
+		frmCliente.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmCliente.getContentPane().setLayout(null);
+		
+		textArea = new JTextArea();
+		textArea.setBounds(0, 0, 484, 275);
+		frmCliente.getContentPane().add(textArea);
+		
+		btnButton = new JButton("Enviar");
+		btnButton.setBounds(363, 312, 89, 23);
+		frmCliente.getContentPane().add(btnButton);
+		
+		textField = new JTextField();
+		textField.setBounds(10, 312, 311, 23);
+		frmCliente.getContentPane().add(textField);
+		textField.setColumns(10);
+	}
+
+}

@@ -1,0 +1,10 @@
+package exer3_OO;
+
+public class TestePerm {
+	
+	public static void main(String[] args) {
+		
+		Permutacao p = new Permutacao;
+	}
+
+}

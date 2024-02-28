@@ -1,0 +1,58 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    
+    public static void main(String[] args) throws IOException {
+        
+    	
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader leitor = new BufferedReader(ir);
+        
+        int A = Integer.parseInt(leitor.readLine());
+        int total = A;
+        int nota100 = 0;
+        int nota50 = 0;
+        int nota20 = 0;
+        int nota10 = 0;
+        int nota5 = 0;
+        int nota2 = 0;
+        int nota1 = 0;
+
+        if(A >= 100) {
+        	nota100 = A/100;
+        	A -= nota100*100;
+        }if(A >= 50) {
+        	nota50 = A/50;
+        	A -= nota50*50;
+        }if(A >= 20) {
+        	nota20 = A/20;
+        	A -= nota20*20;
+        }if(A >= 10) {
+        	nota10 = A/10;
+        	A -= nota10*10;
+        }if(A >= 5) {
+        	nota5 = A/5;
+        	A -= nota5*5;
+        }if(A >= 2) {
+        	nota2 = A/2;
+        	A -= nota2*2;
+        }if(A >= 1) {
+        	nota1 = A/1;
+        	A -= nota1*1;
+        }
+        
+        System.out.println(total);
+        System.out.println(nota100+ " nota(s) de R$ 100,00");
+        System.out.println(nota50 +" nota(s) de R$ 50,00");
+        System.out.println(nota20+ " nota(s) de R$ 20,00");
+        System.out.println(nota10+ " nota(s) de R$ 10,00");
+        System.out.println(nota5+ " nota(s) de R$ 5,00");
+        System.out.println(nota2+ " nota(s) de R$ 2,00");
+        System.out.println(nota1+ " nota(s) de R$ 1,00");
+		}
+}       
+       
+        
+   
